@@ -10,14 +10,16 @@
 #import "DivvyDataManager.h"
 #import "DivvyStation.h"
 #import "MapViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface StationsListViewController () <UITabBarDelegate, UITableViewDataSource, DivvyDataDelegate, UISearchBarDelegate>
+@interface StationsListViewController () <UITabBarDelegate, UITableViewDataSource, DivvyDataDelegate, UISearchBarDelegate, CLLocationManagerDelegate>
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property bool isFiltered;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property DivvyDataManager *dataManager;
 @property NSMutableArray *divvyStations;
 @property NSMutableArray *filteredDivvyList;
+@property CLLocationManager *locationManager;
 
 @end
 
@@ -30,9 +32,33 @@
     self.dataManager.delegate = self;
     self.searchBar.delegate = self; 
     self.divvyStations = [NSMutableArray new];
-    [self.dataManager requestData];
+    self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
+    [self findUserCurrentLocation];
 }
 
+
+-(void)findUserCurrentLocation{
+    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager startUpdatingLocation];
+}
+
+#pragma mark - Location Manager Delegates
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    NSLog (@"%@", error);
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+    for (CLLocation *location in locations) {
+        if (location.horizontalAccuracy < 1000 && location.verticalAccuracy < 1000) {
+            NSLog(@"Location Found! Reverse Geocoding Process Initiated");
+            [self.locationManager stopUpdatingLocation];
+            [self.dataManager requestData:location];
+            break;
+        }
+    }
+}
 
 #pragma mark - UITableView
 

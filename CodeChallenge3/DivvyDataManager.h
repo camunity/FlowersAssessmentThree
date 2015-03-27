@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <CoreLocation/CoreLocation.h>
 @protocol DivvyDataDelegate <NSObject>
 
 @optional
@@ -22,6 +22,6 @@
 @property NSArray *stationBeanList;
 @property NSMutableArray *divvyStations; 
 
-- (void)requestData;
+- (void)requestData:(CLLocation*)location;
 - (instancetype)initWithURL;
 @end

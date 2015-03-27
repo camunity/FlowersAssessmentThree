@@ -20,7 +20,7 @@
     return self;
 }
 
-- (void)requestData {
+- (void)requestData:(CLLocation *)location {
 
     self.divvyStations = [NSMutableArray new];
 
@@ -43,14 +43,22 @@
                                    NSString *latitude = dict[@"latitude"];
                                    NSString *longitude = dict[@"longitude"];
                                    NSString *bikesAvailable = dict[@"availableBikes"];
+
                                    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude.doubleValue, longitude.doubleValue);
+                                   CLLocation *loc = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+                                   CLLocationDistance distance = [location distanceFromLocation:loc];
 
                                 DivvyStation *divvyStation = [[DivvyStation alloc] initWithName:name WithCoordinate:coordinate WithBikes:bikesAvailable.integerValue];
-
+                                   divvyStation.distanceFromUser = distance;
                                    [self.divvyStations addObject:divvyStation];
                                }
                                NSLog(@"%li", self.divvyStations.count);
-                               [self.delegate getDivvyData:self.divvyStations];
+                               NSSortDescriptor *sort;
+                               sort = [[NSSortDescriptor alloc]initWithKey:@"distanceFromUser" ascending:YES];
+                               NSArray *sortArray = [NSArray arrayWithObject:sort];
+                               NSArray *sortedArray;
+                               sortedArray = [self.divvyStations sortedArrayUsingDescriptors:sortArray];
+                               [self.delegate getDivvyData:sortedArray];
                            }];
     
 }

@@ -18,7 +18,6 @@ float const CHLongitude = -87.6847;
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property MKPointAnnotation *divvyStationAnnotation;
-@property CLLocationManager *locationManager;
 @property NSMutableString *alertMessage;
 @property DivvyPlacemark *divvyStationPlacemark;
 @property MKMapItem *destination;
@@ -32,7 +31,6 @@ float const CHLongitude = -87.6847;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mapView.delegate = self;
-    self.locationManager.delegate = self;
 
     [self displayUserLocation];
     self.divvyStationAnnotation = [MKPointAnnotation new];
@@ -49,11 +47,7 @@ float const CHLongitude = -87.6847;
 }
 
 -(void)displayUserLocation{
-    self.locationManager = [CLLocationManager new];
-    [self.locationManager requestAlwaysAuthorization];
-    [self.locationManager startUpdatingLocation];
     self.mapView.showsUserLocation = YES;
-
 }
 
 
@@ -70,22 +64,6 @@ float const CHLongitude = -87.6847;
     self.destination = temp;
 }
 
-
-#pragma mark - Location Manager Delegates
-
--(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
-    NSLog (@"%@", error);
-}
-
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-    for (CLLocation *location in locations) {
-        if (location.horizontalAccuracy < 1000 && location.verticalAccuracy < 1000) {
-            NSLog(@"Location Found! Reverse Geocoding Process Initiated");
-            [self.locationManager stopUpdatingLocation];
-            break;
-        }
-    }
-}
 
 
 -(void)centerOnStation{
