@@ -10,4 +10,16 @@
 
 @implementation DivvyStation
 
+
+-(instancetype)initWithName:(NSString *)name WithCoordinate:(CLLocationCoordinate2D) coordinate WithBikes:(NSInteger)bikesAvailable{
+
+        self = [super init];
+        if (self) {
+            self.name = name;
+            self.coordinate = coordinate;
+            self.bikesAvailable = bikesAvailable;
+        }
+        return self;
+    }
+
 @end

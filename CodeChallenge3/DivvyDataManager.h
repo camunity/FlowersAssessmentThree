@@ -8,6 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DivvyDataManager : NSObject
+@protocol DivvyDataDelegate <NSObject>
 
+@optional
+- (void)getDivvyData:(id)data;
+
+@end
+
+@interface DivvyDataManager : NSObject
+@property (nonatomic, assign) id <DivvyDataDelegate> delegate;
+@property NSString *masterDataURL;
+@property NSDictionary *masterDictionary;
+@property NSArray *stationBeanList;
+@property NSMutableArray *divvyStations; 
+
+- (void)requestData;
+- (instancetype)initWithURL;
 @end

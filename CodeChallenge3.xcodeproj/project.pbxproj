@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		938C35E919F02E16000F4F50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C35E819F02E16000F4F50 /* main.m */; };
 		938C35EC19F02E16000F4F50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C35EB19F02E16000F4F50 /* AppDelegate.m */; };
-		938C35EF19F02E16000F4F50 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C35EE19F02E16000F4F50 /* ViewController.m */; };
 		938C35F219F02E16000F4F50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 938C35F019F02E16000F4F50 /* Main.storyboard */; };
 		938C35F419F02E16000F4F50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 938C35F319F02E16000F4F50 /* Images.xcassets */; };
 		938C35F719F02E16000F4F50 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 938C35F519F02E16000F4F50 /* LaunchScreen.xib */; };
 		938C360319F02E16000F4F50 /* CodeChallenge3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C360219F02E16000F4F50 /* CodeChallenge3Tests.m */; };
+		938C360E19F02F62000F4F50 /* StationsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C360D19F02F62000F4F50 /* StationsListViewController.m */; };
+		938C361119F02F6E000F4F50 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C361019F02F6E000F4F50 /* MapViewController.m */; };
+		938C361319F03387000F4F50 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938C361219F03387000F4F50 /* MapKit.framework */; };
+		F33D3A0C1AC59DDE00966C18 /* DivvyDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D3A0B1AC59DDE00966C18 /* DivvyDataManager.m */; };
+		F33D3A121AC59E0700966C18 /* DivvyStation.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D3A111AC59E0700966C18 /* DivvyStation.m */; };
+		F33D3A151AC5C11400966C18 /* DivvyPlacemark.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D3A141AC5C11400966C18 /* DivvyPlacemark.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +37,23 @@
 		938C35E819F02E16000F4F50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		938C35EA19F02E16000F4F50 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		938C35EB19F02E16000F4F50 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		938C35ED19F02E16000F4F50 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		938C35EE19F02E16000F4F50 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		938C35F119F02E16000F4F50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		938C35F319F02E16000F4F50 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		938C35F619F02E16000F4F50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		938C35FC19F02E16000F4F50 /* CodeChallenge3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeChallenge3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		938C360119F02E16000F4F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		938C360219F02E16000F4F50 /* CodeChallenge3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeChallenge3Tests.m; sourceTree = "<group>"; };
+		938C360C19F02F62000F4F50 /* StationsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StationsListViewController.h; path = ../StationsListViewController.h; sourceTree = "<group>"; };
+		938C360D19F02F62000F4F50 /* StationsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StationsListViewController.m; path = ../StationsListViewController.m; sourceTree = "<group>"; };
+		938C360F19F02F6E000F4F50 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = ../MapViewController.h; sourceTree = "<group>"; };
+		938C361019F02F6E000F4F50 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = ../MapViewController.m; sourceTree = "<group>"; };
+		938C361219F03387000F4F50 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F33D3A0A1AC59DDE00966C18 /* DivvyDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DivvyDataManager.h; sourceTree = "<group>"; };
+		F33D3A0B1AC59DDE00966C18 /* DivvyDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DivvyDataManager.m; sourceTree = "<group>"; };
+		F33D3A101AC59E0700966C18 /* DivvyStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DivvyStation.h; sourceTree = "<group>"; };
+		F33D3A111AC59E0700966C18 /* DivvyStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DivvyStation.m; sourceTree = "<group>"; };
+		F33D3A131AC5C11400966C18 /* DivvyPlacemark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DivvyPlacemark.h; sourceTree = "<group>"; };
+		F33D3A141AC5C11400966C18 /* DivvyPlacemark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DivvyPlacemark.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				938C361319F03387000F4F50 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +78,7 @@
 		938C35DA19F02E16000F4F50 = {
 			isa = PBXGroup;
 			children = (
+				938C361219F03387000F4F50 /* MapKit.framework */,
 				938C35E519F02E16000F4F50 /* CodeChallenge3 */,
 				938C35FF19F02E16000F4F50 /* CodeChallenge3Tests */,
 				938C35E419F02E16000F4F50 /* Products */,
@@ -81,11 +97,11 @@
 		938C35E519F02E16000F4F50 /* CodeChallenge3 */ = {
 			isa = PBXGroup;
 			children = (
-				938C35EA19F02E16000F4F50 /* AppDelegate.h */,
+				F33D3A091AC59C9500966C18 /* Model */,
+				F33D3A081AC59C9000966C18 /* View */,
+				F33D3A071AC59C8D00966C18 /* Controller */,
 				938C35EB19F02E16000F4F50 /* AppDelegate.m */,
-				938C35ED19F02E16000F4F50 /* ViewController.h */,
-				938C35EE19F02E16000F4F50 /* ViewController.m */,
-				938C35F019F02E16000F4F50 /* Main.storyboard */,
+				938C35EA19F02E16000F4F50 /* AppDelegate.h */,
 				938C35F319F02E16000F4F50 /* Images.xcassets */,
 				938C35F519F02E16000F4F50 /* LaunchScreen.xib */,
 				938C35E619F02E16000F4F50 /* Supporting Files */,
@@ -117,6 +133,38 @@
 				938C360119F02E16000F4F50 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F33D3A071AC59C8D00966C18 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				938C360C19F02F62000F4F50 /* StationsListViewController.h */,
+				938C360D19F02F62000F4F50 /* StationsListViewController.m */,
+				938C360F19F02F6E000F4F50 /* MapViewController.h */,
+				938C361019F02F6E000F4F50 /* MapViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F33D3A081AC59C9000966C18 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				938C35F019F02E16000F4F50 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F33D3A091AC59C9500966C18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F33D3A0A1AC59DDE00966C18 /* DivvyDataManager.h */,
+				F33D3A0B1AC59DDE00966C18 /* DivvyDataManager.m */,
+				F33D3A101AC59E0700966C18 /* DivvyStation.h */,
+				F33D3A111AC59E0700966C18 /* DivvyStation.m */,
+				F33D3A131AC5C11400966C18 /* DivvyPlacemark.h */,
+				F33D3A141AC5C11400966C18 /* DivvyPlacemark.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +267,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				938C35EF19F02E16000F4F50 /* ViewController.m in Sources */,
+				938C360E19F02F62000F4F50 /* StationsListViewController.m in Sources */,
+				F33D3A0C1AC59DDE00966C18 /* DivvyDataManager.m in Sources */,
 				938C35EC19F02E16000F4F50 /* AppDelegate.m in Sources */,
+				F33D3A121AC59E0700966C18 /* DivvyStation.m in Sources */,
 				938C35E919F02E16000F4F50 /* main.m in Sources */,
+				938C361119F02F6E000F4F50 /* MapViewController.m in Sources */,
+				F33D3A151AC5C11400966C18 /* DivvyPlacemark.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +466,7 @@
 				938C360819F02E16000F4F50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		938C360919F02E16000F4F50 /* Build configuration list for PBXNativeTarget "CodeChallenge3Tests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +475,7 @@
 				938C360B19F02E16000F4F50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

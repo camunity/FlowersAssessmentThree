@@ -10,4 +10,14 @@
 
 @implementation DivvyPlacemark
 
+-(instancetype)initWithLocation:(CLLocation*)location{
+    self = [super init];
+    if (self) {
+        self.divvyLocation = location;
+    }
+
+    return self;
+}
+
+
 @end

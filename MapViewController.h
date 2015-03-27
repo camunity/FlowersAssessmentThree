@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DivvyStation.h"
 
 @interface MapViewController : UIViewController
-
+@property DivvyStation *divvyStation;
 @end

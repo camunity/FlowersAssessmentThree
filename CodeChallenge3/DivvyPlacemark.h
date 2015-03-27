@@ -7,7 +7,10 @@
 //
 
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface DivvyPlacemark : MKPlacemark
-
+@property MKPointAnnotation *pointAnnotation;
+@property CLLocation *divvyLocation;
+-(instancetype)initWithLocation:(CLLocation*)location;
 @end
