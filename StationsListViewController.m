@@ -37,6 +37,9 @@
     [self findUserCurrentLocation];
 }
 
+//-(void)viewWillAppear:(BOOL)animated{
+//    [self.tableView reloadData];
+//}
 
 -(void)findUserCurrentLocation{
     [self.locationManager requestAlwaysAuthorization];
@@ -101,14 +104,20 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UITableViewCell*)sender{
     if ([segue.identifier isEqualToString:@"ToMapSegue"]){
         MapViewController *mvc = [segue destinationViewController];
-        mvc.divvyStation = self.divvyStations[sender.tag];
+
+        if(self.isFiltered){
+        mvc.divvyStation = self.filteredDivvyList[sender.tag];
+        }
+        else{
+            mvc.divvyStation = self.divvyStations[sender.tag];
+        }
     }
 }
 
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
     [searchBar setShowsCancelButton:YES animated:YES];
-    self.tableView.allowsSelection = NO;
-    self.tableView.scrollEnabled = NO;
+    self.tableView.allowsSelection = YES;
+    self.tableView.scrollEnabled = YES;
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
@@ -143,6 +152,7 @@
 
     [self.tableView reloadData];
 }
+
 
 
 @end
