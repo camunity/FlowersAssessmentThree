@@ -37,8 +37,6 @@ float const CHLongitude = -87.6847;
     self.divvyStationAnnotation.title = self.divvyStation.name;
     self.divvyStationAnnotation.coordinate = self.divvyStation.coordinate;
     [self.mapView addAnnotation:self.divvyStationAnnotation];
-    self.divvyLocation = [[CLLocation alloc] initWithLatitude:self.divvyStation.coordinate.latitude longitude:self.divvyStation.coordinate.longitude];
-    self.divvyStationPlacemark = [[DivvyPlacemark alloc] initWithLocation:self.divvyLocation];
     self.divvyMKPlacemark = [[MKPlacemark alloc]
                         initWithCoordinate:self.divvyStation.coordinate
                         addressDictionary:nil];
